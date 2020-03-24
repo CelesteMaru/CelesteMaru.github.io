@@ -1,7 +1,6 @@
-document.getElementById("bgp").style.height = 1080 * (window.innerWidth / 1920) - 5 + "px";
-
+document.getElementById("bgp").style.height = 100 + "vh"
 document.body.onresize = function resize() {
-  document.getElementById("bgp").style.height = 1080 * (window.innerWidth / 1920) - 5 + "px";
+  document.getElementById("bgp").style.height = 100 + "vh"
 }
 
 'use strict';
@@ -10,23 +9,43 @@ const textWriter = (() => {
 
   const intro = document.querySelector('.intro');
 
-  const arr = [];
+  let arr = [];
   let value = intro.firstChild.nodeValue;
   let current = 0;
   let intervalTime = 0;
+  let ttour = 0;
+  intro.firstChild.nodeValue = '';
+  document.querySelector('.intro2').firstChild.nodeValue = '';
 
   const text = () => {
     for (let i = 0, len = value.length; i < len; i++) {
       arr.push(value.charAt(i));
     }
 
-    intro.firstChild.nodeValue = '';
+
 
     const textWriter = () => {
-      intro.firstChild.nodeValue += arr[current];
+      if (ttour == 0) {
+        intro.firstChild.nodeValue += arr[current];
+      } else {
+        document.querySelector('.intro2').firstChild.nodeValue += arr[current];
+      }
+
       current++;
       if (current === arr.length) {
-        clearInterval(duration);
+
+        if (ttour == 0) {
+          ttour = 1;
+          current = 0;
+          arr = [];
+          value = "Pierre Maruejol";
+          for (let i = 0, len = value.length; i < len; i++) {
+            arr.push(value.charAt(i));
+          }
+        } else {
+          clearInterval(duration);
+        }
+
       }
 
     };
@@ -41,15 +60,16 @@ const textWriter = (() => {
   };
 
   return {
-    init: (time) => {
+    init: (time, tour) => {
       intervalTime = time;
+
       loadFunction(text);
     }
   };
 
 })();
 
-textWriter.init(100);
+textWriter.init(100, 0);
 $('#boop').on("click", function(e) {
   $(".centerBox").css({
     "display": "none"

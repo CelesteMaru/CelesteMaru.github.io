@@ -64,6 +64,15 @@ body{
   line-height: 24px;
   letter-spacing: 1px;
 }
+.intro2{
+  padding-left: 10px;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Annie Use Your Telescope', sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  line-height: 24px;
+  letter-spacing: 1px;
+}
 
 .indeks{
   border-bottom: 2px solid white;
