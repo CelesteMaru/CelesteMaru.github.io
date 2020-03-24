@@ -6,7 +6,7 @@ document.body.onresize = function resize() {
 
 'use strict';
 
-const textWriter = (()=>{
+const textWriter = (() => {
 
   const intro = document.querySelector('.intro');
 
@@ -15,17 +15,17 @@ const textWriter = (()=>{
   let current = 0;
   let intervalTime = 0;
 
-  const text = () =>{
-    for (let i = 0, len = value.length; i < len; i++){
+  const text = () => {
+    for (let i = 0, len = value.length; i < len; i++) {
       arr.push(value.charAt(i));
     }
 
     intro.firstChild.nodeValue = '';
 
-    const textWriter = () =>{
+    const textWriter = () => {
       intro.firstChild.nodeValue += arr[current];
       current++;
-      if (current === arr.length){
+      if (current === arr.length) {
         clearInterval(duration);
       }
 
@@ -34,14 +34,14 @@ const textWriter = (()=>{
     const duration = setInterval(textWriter, intervalTime);
   };
 
-  const loadFunction = (callback) =>{
-    if (addEventListener){
+  const loadFunction = (callback) => {
+    if (addEventListener) {
       window.addEventListener('load', callback, false);
     }
   };
 
   return {
-    init: (time) =>{
+    init: (time) => {
       intervalTime = time;
       loadFunction(text);
     }
@@ -50,14 +50,30 @@ const textWriter = (()=>{
 })();
 
 textWriter.init(100);
-$('#boop').on("click",function(e){
-  $(".centerBox").css({"display" : "none"});
-  $(".ca3-scroll-down-link").css({"display" : "block"});
-  $("#imageG").css({"position" : "absolute"});
-  $("#imageD").css({"position" : "absolute"});
+$('#boop').on("click", function(e) {
+  $(".centerBox").css({
+    "display": "none"
+  });
+  $(".ca3-scroll-down-link").css({
+    "display": "block"
+  });
+  $("#imageG").css({
+    "position": "absolute"
+  });
+  $("#imageD").css({
+    "position": "absolute"
+  });
 
-  $("#imageG").animate({"right" : "0vw"});
-  $("#imageD").animate({"left" : "0vw"});
+  $("#imageG").animate({
+    "right": "0vw"
+  });
+  $("#imageD").animate({
+    "left": "0vw"
+  });
+  setTimeout(() => {
+    $("body").css({
+      "overflow": "auto"
+    });
+  }, 2000);
 
-  $("body").css( {"overflow" : "auto"});
 });
