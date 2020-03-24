@@ -50,3 +50,14 @@ const textWriter = (()=>{
 })();
 
 textWriter.init(100);
+$('#boop').on("click",function(e){
+  $(".centerBox").css({"display" : "none"});
+  $(".ca3-scroll-down-link").css({"display" : "block"});
+  $("#imageG").css({"position" : "absolute"});
+  $("#imageD").css({"position" : "absolute"});
+
+  $("#imageG").animate({"right" : "0vw"});
+  $("#imageD").animate({"left" : "0vw"});
+
+  $("body").css( {"overflow" : "auto"});
+});
