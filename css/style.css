@@ -1,5 +1,6 @@
 html {
   background: #ececec;
+  scroll-behavior: smooth;
 
 }
 
@@ -10,7 +11,6 @@ body{
 #selfpre{
   background-image: url("../Picture/milkyway.jpeg");
   background-repeat: no-repeat;
-  padding-top: 56px;
   background-size:  100vw 100vh;
   height: 100vh;
 }
@@ -49,6 +49,25 @@ body{
   justify-content: center;
   align-items: center;
 }
+.spacer{
+  padding-top: 100px;
+}
+.cardcolor{
+  background-color: rgba(50, 50, 50,0.8);
+  color: rgba(255,255,255,0.9);
+}
+.margtop{
+  margin-top: 20px;
+}
+.grad{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0,0,0,0.3),rgba(0, 0, 0, 0.9));
+  height:100vh;
+}
+.pfp{
+  width: 40%;
+  padding-top: 20px;
+
+}
 .menuH1{
   position: absolute;
   padding: 1%;
@@ -81,6 +100,12 @@ body{
   border-radius: 4px;
   line-height: 24px;
   letter-spacing: 1px;
+}
+.flex{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .soustitre{
