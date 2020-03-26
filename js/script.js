@@ -280,7 +280,7 @@ class FlowField {
 
 //Creates the canvas
 var canvas = document.createElement("canvas");
-canvas.style = `position:absolute;
+canvas.style = `
               background-color:black;
               border: 4px solid rgba(255,255,255, 0.1);
               width: 100%;

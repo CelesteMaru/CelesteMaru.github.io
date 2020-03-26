@@ -14,7 +14,14 @@ body{
   background-size:  100vw 100vh;
   height: 100vh;
 }
+#bgpro{
+  background-image: url("../Picture/project.webp");
+  background-repeat: no-repeat;
 
+
+  background-size:  100vw 100vh;
+  height: 125vh;
+}
 #imageG{
   background-image: url("../Picture/Imageportfolio1.png");
   position: fixed;
@@ -34,6 +41,9 @@ body{
   height:100%;
   left: 100vw;
 }
+#trans{
+  height: 25vh;
+}
 
 #bgp{
  /*background-image: url('../Picture/Imageportfolio.jpg');*/
@@ -48,6 +58,13 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.padup{
+  padding-top: 20px;
+}
+.vid{
+  height: 23vh;
+  width:  22vw;
 }
 .nav-link{
  padding: 6px;
@@ -89,6 +106,7 @@ body{
 .minInteret{
   min-height: 300px;
 }
+
 .intro{
   display:flex;
   flex-direction:row;
