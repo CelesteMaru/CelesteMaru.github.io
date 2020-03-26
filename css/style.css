@@ -49,6 +49,13 @@ body{
   justify-content: center;
   align-items: center;
 }
+.nav-link{
+  padding: 7px;
+}
+
+.textac{
+  text-align: center;
+}
 .spacer{
   padding-top: 100px;
 }
