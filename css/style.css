@@ -47,10 +47,16 @@ body{
   height: 25vh;
 }
 #trans2{
-  height: 25vh;
+  height:25vh;
   width: 100%;
-  border: 4px solid rgba(255,255,255, 0.9);
-  background-image: url("../Picture/trans2bg.jpg");
+  border: 4px solid rgba(100,100,100, 0.6);
+
+}
+#world{
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: white;
 }
 #bgp{
  /*background-image: url('../Picture/Imageportfolio.jpg');*/
@@ -235,7 +241,9 @@ body{
   flex-direction: column;
   position: relative;
 }
-
+.télé{
+  margin-top: 50px;
+}
 .categoryWrapper:after{
   position: absolute;
   top:0;
