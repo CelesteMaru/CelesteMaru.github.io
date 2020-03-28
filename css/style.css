@@ -3,7 +3,9 @@ html {
   scroll-behavior: smooth;
 
 }
-
+.form-control{
+  color:white;
+}
 body{
   overflow: hidden; /* Hide scrollbars */
 }
@@ -64,6 +66,11 @@ body{
   justify-content: center;
   align-items: center;
 }
+.colorSkills{
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 100%
+}
+
 .footerContact{
   height: 90vh;
   background-color: rgba(0, 13, 51, 0.5);
@@ -83,11 +90,24 @@ body{
 .textac{
   text-align: center;
 }
+.text2{
+  background-image: url("../Picture/milkyway.jpeg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 100%;
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip: text;
+  -webkit-box-reflect:below 0 linear-gradient(transparent, white);
+}
 .spacer{
   padding-top: 100px;
 }
 .cardcolor{
   height: 100%;
+  background-color: rgba(50, 50, 50,0.8);
+  color: rgba(255,255,255,0.9);
+}
+.cardcolor2{
   background-color: rgba(50, 50, 50,0.8);
   color: rgba(255,255,255,0.9);
 }
@@ -126,6 +146,10 @@ body{
   min-height: 300px;
 }
 
+.lightgray{
+  color:lightgray;
+}
+
 .intro{
   display:flex;
   flex-direction:row;
@@ -136,6 +160,9 @@ body{
   border-radius: 4px;
   line-height: 24px;
   letter-spacing: 1px;
+}
+.margtopContact{
+  margin-top: 15vh;
 }
 .intro2{
   padding-left: 10px;
@@ -151,6 +178,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .soustitre{
@@ -201,7 +229,6 @@ body{
 .categoryWrapper{
   height: 500px;
   width: 800px;
-  background: url("http://ohlookawebsite.com/bathroomtestfull.jpg") no-repeat center center;
   display: flex;
   justify-content: center;
   align-items: center;
