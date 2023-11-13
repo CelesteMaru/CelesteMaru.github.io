@@ -36,7 +36,7 @@ const testText = `1Gargoyle.png
 
 
 displayCard = (foldername, image)=>{
-    return `<div class="col-3 h-100" style="margin-bottom:1%;">
+    return `<div class="col-sm-12 col-md-6 col-lg-3 h-100" style="margin-bottom:1%;">
     <div class="card bg-dark h100" style="padding:0;">
     
         <div class="row w-100 h-100" style="margin:0;">
