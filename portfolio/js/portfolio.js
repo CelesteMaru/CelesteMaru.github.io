@@ -12,3 +12,11 @@ folders.forEach(folder => {
         });
     });
 });
+
+
+fetch("portfolio/ressources/inktober2022/file.txt")
+.then((res) => res.text())
+.then((text) => {
+  console.log(text);
+ })
+.catch((e) => console.error(e));
