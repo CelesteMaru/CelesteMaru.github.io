@@ -1,3 +1,12 @@
+.formcontainer{
+    padding: 1%;
+    background-color: #2e2e2e;
+    margin-bottom: 1%;
+}
+#image-search{
+    border-radius: 24px ;
+}
+
 #images{
     margin: 0;
 }
@@ -73,8 +82,12 @@
     position: absolute;
     z-index: 2 ;
     border:0;
-    right: 2.5vw;
-    top: 2.5vh;
+    right: 0vw;
+    top: 0vh;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    padding-bottom: 2.5vh;
+    padding-top: 2.5vh;
     color: #fff;
     opacity: 0.8;
     background: 0 0;

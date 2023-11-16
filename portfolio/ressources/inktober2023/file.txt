@@ -5,7 +5,7 @@
 6Golden.png
 7Drip.png
 8Toad.png
-9BounceNotBad.png
+9Bounce.png
 10Fortune.png
 11Wander.png
 12Spicey.png
