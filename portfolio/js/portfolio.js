@@ -52,7 +52,7 @@ goToSlide = (index)=>{
     currentIndex = index
     carouselDOM.style.display="flex";
     bootstrapCarousel.to(currentIndex);
-    currentIndex=0;
+    currentIndex=currentSearch.find(index);
 }
 
 // Code to close the carousel
