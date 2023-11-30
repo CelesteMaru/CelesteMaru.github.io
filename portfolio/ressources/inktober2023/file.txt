@@ -13,7 +13,7 @@
 14Castle.png
 15Dagger.png
 16Angel.png
-17demon.png
+17Demon.png
 18Saddle.png
 19Plump.png
 20Frost.png

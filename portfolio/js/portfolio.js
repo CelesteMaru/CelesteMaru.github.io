@@ -1,29 +1,108 @@
 displayCard = (foldername, image, imageIndex)=>{
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("col-md-12", "col-lg-3", "h-100", "card-container", "hoverable");
-    newDiv.id=imageIndex;
-    newDiv.innerHTML = `<div class="card h100">
-                            <div class="row w-100 h-100" style="margin:0;">
-                                <img src="./portfolio/ressources/${foldername}/${image}" onclick="goToSlide(${imageIndex})" alt="${image}" class="card-img">
-                                <div class="row align-items-end h-100 w-100">
-                                    <div class="position-absolute overlay">
-                                        <h4 class="card-title">${image}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>`
-    return newDiv;
+
+    /*
+    <div class="col-md-12 col-lg-3 h-100 card-container hoverable">
+        <div class="card h100">
+            <div class="row w-100 h-100 margin0">
+                <img src="./portfolio/ressources/${foldername}/${image}" onclick="goToSlide(${imageIndex})" alt="${image}" class="card-img"> + spoiler si nécessaire
+                <div class="row align-items-end h-100 w-100">
+                    <div class="position-absolute overlay">
+                        <h4 class="card-title">${image}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    */
+    // If image is NSFW
+    const nsfw = image.includes("19Plump.png")
+
+    const cardContainer = document.createElement("div");
+    cardContainer.classList.add("col-md-12", "col-lg-3", "h-100", "card-container", "hoverable");
+    cardContainer.id=imageIndex;
+
+    const card = document.createElement("div");
+    card.classList.add("card", "h100");
+    card.onclick = ()=>{
+        goToSlide(imageIndex);
+    };
+
+    const cardRow = document.createElement("div");
+    cardRow.classList.add("row", "h100", "w100", "margin0");
+
+    let img = document.createElement("img");
+    img.src= `/portfolio/ressources/${foldername}/${image}`;
+    img.alt = image;
+    img.classList.add("card-img");
+    
+    if (nsfw){
+        // Add a spoiler filter
+        img.classList.add("card-image-spoiler", "margin0");
+        const tempDiv = document.createElement("div");
+        tempDiv.classList.add("overflow0")
+        tempDiv.append(img);
+        img = tempDiv;
+
+        const spoilerRadialBackground = document.createElement("div");
+        spoilerRadialBackground.classList.add("spoiler-radial-background")
+        spoilerRadialBackground.innerHTML= "NSFW"
+        img.append(spoilerRadialBackground)
+    }
+
+    const titleContainerDiv = document.createElement("div");
+    titleContainerDiv.classList.add("row", "align-items-end", "h100", "w-100");
+
+    const titlePositioningDiv = document.createElement("div");
+    titlePositioningDiv.classList.add("position-absolute", "overlay");
+    titlePositioningDiv.innerHTML = `<h4 class="card-title">${image}</h4>`
+
+    titleContainerDiv.appendChild(titlePositioningDiv);
+
+    cardRow.appendChild(img);
+
+    cardRow.appendChild(titleContainerDiv);
+
+    card.appendChild(cardRow);
+
+    cardContainer.append(card);
+
+    return cardContainer;
 }
 createCarouselSlide = (foldername,image)=>{
+    const nsfw = image.includes("19Plump.png");
     const item = document.createElement("div");
     item.classList.add("carousel-item");
+
 
     const img = document.createElement("img");
     img.src = `./portfolio/ressources/${foldername}/${image}`;
     img.alt = image;
-    img.classList.add("d-block" ,"carousel-image");
+    img.classList.add("d-block", "carousel-image");
 
-    item.appendChild(img);
+    // If image is NSFW
+    if (nsfw){
+        img.classList.add("carousel-image-spoiler", "margin0");
+
+        const tempDiv = document.createElement("div");
+        tempDiv.classList.add("overflow0")
+        tempDiv.append(img);
+        item.appendChild(tempDiv);
+
+        //Show button;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.innerHTML = "SHOW";
+        button.classList.add("btn", "text-light", "show-button");
+        button.onclick= ()=>{
+            img.classList.remove("carousel-image-spoiler");
+            button.style.display="none"
+        }
+        item.appendChild(button);
+    }
+    else{
+        item.appendChild(img);
+    }
+
     return item;
 }
 
